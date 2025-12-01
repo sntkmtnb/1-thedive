@@ -105,7 +105,7 @@ export default function Home() {
         // 完全に消える前にフェードアウトが始まりますが、
         // 今回は「画面上部に消えるタイミング」なので、
         // rootMarginを調整して、上部付近で交差判定が外れるようにします。
-        rootMargin: "-10% 0px -10% 0px", 
+        rootMargin: "-50% 0px -10% 0px", 
         threshold: 0 // 1ピクセルでも入れば検知、逆に出れば検知
       }
     );
@@ -133,13 +133,13 @@ export default function Home() {
             />
             
             {/* Title Overlay */}
-            <div className="absolute top-[10%] left-0 right-0 text-center z-10 px-4 fade-in">
+            <div className="absolute top-[20%] left-0 right-0 text-center z-10 px-4">
               <h1 className="title-main mb-2 drop-shadow-glow">The Dive</h1>
               <p className="title-sub drop-shadow-glow">根源への潜行</p>
             </div>
 
             {/* Text Overlay */}
-            <div className="absolute bottom-[5%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+            <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
               <div className="w-full text-center">
                 <h2 className="heading text-[#f3f3f3] drop-shadow-lg">
                   深く、もっと深く。
@@ -179,7 +179,7 @@ export default function Home() {
                   className="w-full h-auto block"
                 />
                 
-                <div className="absolute bottom-[8%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor} drop-shadow-lg`}>
                       {section.heading}
@@ -207,7 +207,7 @@ export default function Home() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <div className="w-full py-16 px-6 flex justify-center fade-in">
+                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor}`}>
                       {section.heading}
@@ -228,8 +228,8 @@ export default function Home() {
         ))}
 
         {/* Footer */}
-        <footer className="w-full py-16 bg-[#E7DBB2] text-center">
-          <p className="footer-text">© 2025 newhello.jp</p>
+        <footer className="w-full py-16 bg-[#E7DBB2] text-center h-32">
+          <p className="footer-text h-full flex flex-col items-center justify-end">© 2025 newhello.jp</p>
         </footer>
       </div>
     </main>
