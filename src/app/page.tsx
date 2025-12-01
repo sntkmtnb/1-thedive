@@ -48,7 +48,7 @@ const sections = [
     id: "section3",
     image: "/assets/img4.png",
     width: 1537,
-    height: 2732,
+    height: 2731,
     alt: "地底の洞窟",
     heading: "星のない夜空と、地底の海。",
     body: `岩盤を抜けた先に広がっていたのは、
@@ -87,15 +87,27 @@ export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    // Intersection Observer for fade-in/out animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // 要素が画面内に入っているかどうか
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+          } else {
+            // 画面外に出たらクラスを削除してフェードアウト
+            entry.target.classList.remove("visible");
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        // 画面の上下10%を「画面外」とみなすマージンを設定すると、
+        // 完全に消える前にフェードアウトが始まりますが、
+        // 今回は「画面上部に消えるタイミング」なので、
+        // rootMarginを調整して、上部付近で交差判定が外れるようにします。
+        rootMargin: "-10% 0px -10% 0px", 
+        threshold: 0 // 1ピクセルでも入れば検知、逆に出れば検知
+      }
     );
 
     document.querySelectorAll(".fade-in").forEach((el) => {
@@ -106,9 +118,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen flex justify-center">
-      {/* コンテナ背景色を削除して透明に */}
-      <div className="w-full max-w-[600px] shadow-2xl overflow-hidden">
+    <main className="w-full min-h-screen bg-[#E7DBB2] flex justify-center">
+      <div className="w-full max-w-[600px] bg-[#E7DBB2] shadow-2xl overflow-hidden">
         {/* Hero Section */}
         <section className="relative w-full">
           <div className="relative w-full">
@@ -116,19 +127,19 @@ export default function Home() {
               src="/assets/img1.png"
               alt="空と森のイラスト"
               width={1537}
-              height={2732}
+              height={2731}
               className="w-full h-auto block"
               priority
             />
-
+            
             {/* Title Overlay */}
-            <div className="absolute top-[20%] left-0 right-0 text-center z-10 px-4 fade-in">
+            <div className="absolute top-[10%] left-0 right-0 text-center z-10 px-4 fade-in">
               <h1 className="title-main mb-2 drop-shadow-glow">The Dive</h1>
               <p className="title-sub drop-shadow-glow">根源への潜行</p>
             </div>
 
             {/* Text Overlay */}
-            <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+            <div className="absolute bottom-[5%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
               <div className="w-full text-center">
                 <h2 className="heading text-[#f3f3f3] drop-shadow-lg">
                   深く、もっと深く。
@@ -167,8 +178,8 @@ export default function Home() {
                   height={section.height}
                   className="w-full h-auto block"
                 />
-
-                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+                
+                <div className="absolute bottom-[8%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor} drop-shadow-lg`}>
                       {section.heading}
@@ -186,9 +197,7 @@ export default function Home() {
               </div>
             ) : (
               // Footer Section (画像の下にテキスト)
-              // ここだけ背景色が必要か？それともテクスチャ背景を活かすか？
-              // FigmaデザインではFooter部分はクリーム色。テクスチャ背景の方がリッチなので透明のままにする。
-              <div className="w-full flex flex-col items-center">
+              <div className="w-full flex flex-col items-center bg-[#E7DBB2]">
                 <div className="relative w-full">
                   <Image
                     src={section.image}
@@ -198,7 +207,7 @@ export default function Home() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+                <div className="w-full py-16 px-6 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor}`}>
                       {section.heading}
@@ -219,12 +228,8 @@ export default function Home() {
         ))}
 
         {/* Footer */}
-        <footer className="w-full text-center h-32">
-          <p className="footer-text h-full flex flex-col items-center justify-end hover:underline">
-            <a href="https://newhello.jp" target="_blank" rel="noopener noreferrer">
-              © 2025 newhello.jp
-            </a>
-          </p>
+        <footer className="w-full py-16 bg-[#E7DBB2] text-center">
+          <p className="footer-text">© 2025 newhello.jp</p>
         </footer>
       </div>
     </main>
