@@ -25,12 +25,19 @@ body {
      font-noto クラスを使えばよいが、body全体に適用するためここで指定 */
   font-family: var(--font-noto-sans-jp), "Noto Sans JP", sans-serif;
   
-  /* 背景画像を設定 */
+  /* 背景画像を設定: Figmaのデザイン参考 */
   background-color: var(--color-earth-cream);
   background-image: url('/assets/hero.png');
-  background-repeat: repeat;
-  background-size: auto;
+  background-repeat: repeat; /* テクスチャとしてリピート */
+  background-size: 100% auto; /* モバイルでは幅に合わせて、PCでは適度に拡大 */
+  background-attachment: fixed; /* 背景を固定して奥行き感を出す */
   overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-size: 500px auto; /* PCでは適度なサイズでリピート */
+  }
 }
 
 /* ============================================
@@ -48,7 +55,7 @@ body {
 
 .title-sub {
   font-weight: 700;
-  font-size: clamp(20px, 6.0vw, 32px);
+  font-size: clamp(16px, 5vw, 24px);
   letter-spacing: 1.2px;
   color: var(--color-earth-brown);
 }
@@ -63,7 +70,7 @@ body {
 
 .body-text {
   font-weight: 500;
-  font-size: clamp(15px, 4.5vw, 18px);
+  font-size: clamp(14px, 4.5vw, 16px);
   line-height: 1.8;
   letter-spacing: 0.8px;
 }
@@ -108,6 +115,6 @@ body {
   font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
   font-size: 13px;
   font-weight: bold;
-  line-height: 6.0em;
+  line-height: 1.4;
   color: var(--color-earth-brown);
 }

@@ -207,7 +207,7 @@ export default function Home() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+                <div className="absolute bottom-[0%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor}`}>
                       {section.heading}
