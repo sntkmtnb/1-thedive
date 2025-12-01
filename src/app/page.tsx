@@ -118,8 +118,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen bg-[#E7DBB2] flex justify-center">
-      <div className="w-full max-w-[600px] bg-[#E7DBB2] shadow-2xl overflow-hidden">
+    <main className="w-full min-h-screen flex justify-center">
+      {/* 背景色削除: bodyのテクスチャを見せる */}
+      <div className="w-full max-w-[600px] shadow-2xl overflow-hidden">
         {/* Hero Section */}
         <section className="relative w-full">
           <div className="relative w-full">
@@ -197,7 +198,7 @@ export default function Home() {
               </div>
             ) : (
               // Footer Section (画像の下にテキスト)
-              <div className="w-full flex flex-col items-center bg-[#E7DBB2]">
+              <div className="w-full flex flex-col items-center">
                 <div className="relative w-full">
                   <Image
                     src={section.image}
@@ -228,7 +229,7 @@ export default function Home() {
         ))}
 
         {/* Footer */}
-        <footer className="w-full py-16 bg-[#E7DBB2] text-center h-32">
+        <footer className="w-full py-16 text-center h-32">
           <p className="footer-text h-full flex flex-col items-center justify-end">© 2025 newhello.jp</p>
         </footer>
       </div>
