@@ -28,16 +28,11 @@ body {
   /* 背景画像を設定: Figmaのデザイン参考 */
   background-color: var(--color-earth-cream);
   background-image: url('/assets/hero.png');
-  background-repeat: repeat; /* テクスチャとしてリピート */
-  background-size: 100% auto; /* モバイルでは幅に合わせて、PCでは適度に拡大 */
+  background-repeat: no-repeat;
+  background-size: cover; /* 画面いっぱいに隙間なく表示 */
+  background-position: center;
   background-attachment: fixed; /* 背景を固定して奥行き感を出す */
   overflow-x: hidden;
-}
-
-@media (min-width: 768px) {
-  body {
-    background-size: 500px auto; /* PCでは適度なサイズでリピート */
-  }
 }
 
 /* ============================================
