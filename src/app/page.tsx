@@ -48,7 +48,7 @@ const sections = [
     id: "section3",
     image: "/assets/img4.png",
     width: 1537,
-    height: 2731,
+    height: 2732,
     alt: "地底の洞窟",
     heading: "星のない夜空と、地底の海。",
     body: `岩盤を抜けた先に広がっていたのは、
@@ -116,19 +116,19 @@ export default function Home() {
               src="/assets/img1.png"
               alt="空と森のイラスト"
               width={1537}
-              height={2731}
+              height={2732}
               className="w-full h-auto block"
               priority
             />
-            
+
             {/* Title Overlay */}
-            <div className="absolute top-[10%] left-0 right-0 text-center z-10 px-4 fade-in">
+            <div className="absolute top-[20%] left-0 right-0 text-center z-10 px-4 fade-in">
               <h1 className="title-main mb-2 drop-shadow-glow">The Dive</h1>
               <p className="title-sub drop-shadow-glow">根源への潜行</p>
             </div>
 
             {/* Text Overlay */}
-            <div className="absolute bottom-[5%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+            <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
               <div className="w-full text-center">
                 <h2 className="heading text-[#f3f3f3] drop-shadow-lg">
                   深く、もっと深く。
@@ -167,8 +167,8 @@ export default function Home() {
                   height={section.height}
                   className="w-full h-auto block"
                 />
-                
-                <div className="absolute bottom-[8%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+
+                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor} drop-shadow-lg`}>
                       {section.heading}
@@ -198,7 +198,7 @@ export default function Home() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <div className="w-full py-16 px-6 flex justify-center fade-in">
+                <div className="absolute bottom-[4%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
                   <div className="w-full text-center">
                     <h2 className={`heading ${section.textColor}`}>
                       {section.heading}
@@ -219,8 +219,12 @@ export default function Home() {
         ))}
 
         {/* Footer */}
-        <footer className="w-full py-16 text-center">
-          <p className="footer-text">© 2025 newhello.jp</p>
+        <footer className="w-full text-center h-32">
+          <p className="footer-text h-full flex flex-col items-center justify-end hover:underline">
+            <a href="https://newhello.jp" target="_blank" rel="noopener noreferrer">
+              © 2025 newhello.jp
+            </a>
+          </p>
         </footer>
       </div>
     </main>

@@ -21,12 +21,15 @@ html {
 }
 
 body {
+  /* font-family: var(--font-noto-sans-jp) は @theme で --font-noto にマッピングされているので
+     font-noto クラスを使えばよいが、body全体に適用するためここで指定 */
   font-family: var(--font-noto-sans-jp), "Noto Sans JP", sans-serif;
+  
   /* 背景画像を設定 */
   background-color: var(--color-earth-cream);
   background-image: url('/assets/hero.png');
   background-repeat: repeat;
-  background-size: auto; /* テクスチャのサイズに合わせて調整 */
+  background-size: auto;
   overflow-x: hidden;
 }
 
