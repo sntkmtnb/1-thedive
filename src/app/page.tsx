@@ -8,6 +8,8 @@ const sections = [
   {
     id: "section1",
     image: "/assets/img2.png",
+    width: 1537,
+    height: 2732,
     alt: "土の中の世界",
     heading: "土の下の賑やかな隣人たち。",
     body: `私たちが歩く地面の皮一枚下では、
@@ -19,11 +21,13 @@ const sections = [
 
 土の匂いは、生命の匂いです。`,
     textColor: "text-[#f3f3f3]",
-    textColorMd: "md:text-[#573c28]",
+    overlay: true,
   },
   {
     id: "section2",
     image: "/assets/img3.png",
+    width: 1537,
+    height: 2732,
     alt: "化石の世界",
     heading: "時を止めた、石の図書館。",
     body: `さらに深く潜りましょう。
@@ -38,11 +42,13 @@ const sections = [
 静寂の中で、彼らは
 今も物語を語り続けています。`,
     textColor: "text-[#f3f3f3]",
-    textColorMd: "md:text-[#573c28]",
+    overlay: true,
   },
   {
     id: "section3",
     image: "/assets/img4.png",
+    width: 1537,
+    height: 2731,
     alt: "地底の洞窟",
     heading: "星のない夜空と、地底の海。",
     body: `岩盤を抜けた先に広がっていたのは、
@@ -55,11 +61,13 @@ const sections = [
 地上の喧騒はもう届きません。
 聞こえるのは、水滴が落ちる音だけ。`,
     textColor: "text-[#f3f3f3]",
-    textColorMd: "md:text-[#573c28]",
+    overlay: true,
   },
   {
     id: "section4",
     image: "/assets/img5.png",
+    width: 1537,
+    height: 2732,
     alt: "地球の核",
     heading: "はじまりの熱。",
     body: `ついに、世界の底へ辿り着きました。
@@ -71,8 +79,7 @@ const sections = [
 すべての生命は、この熱から生まれ、
 そして還ってくるのです。`,
     textColor: "text-[#573c28]",
-    textColorMd: "",
-    isLight: true,
+    overlay: false,
   },
 ];
 
@@ -80,7 +87,6 @@ export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    // Intersection Observer for fade-in animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -100,94 +106,123 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full bg-[#E7DBB2]">
-      {/* Hero Section */}
-      <section className="section-wrapper">
-        <div className="content-wrapper">
-          <div className="image-container fade-in relative">
+    <main className="w-full min-h-screen flex justify-center">
+      {/* コンテナ背景色を削除して透明に */}
+      <div className="w-full max-w-[600px] shadow-2xl overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative w-full">
+          <div className="relative w-full">
             <Image
               src="/assets/img1.png"
               alt="空と森のイラスト"
               width={1537}
               height={2731}
-              className="w-full h-auto"
+              className="w-full h-auto block"
               priority
-              sizes="(max-width: 768px) 100vw, 800px"
             />
+            
             {/* Title Overlay */}
-            <div className="title-overlay">
-              <h1 className="title-main">The Dive</h1>
-              <p className="title-sub mt-2">根源への潜行</p>
+            <div className="absolute top-[10%] left-0 right-0 text-center z-10 px-4 fade-in">
+              <h1 className="title-main mb-2 drop-shadow-glow">The Dive</h1>
+              <p className="title-sub drop-shadow-glow">根源への潜行</p>
             </div>
-            {/* Text Overlay */}
-            <div className="text-overlay">
-              <h2 className="heading text-[#f3f3f3]">
-                深く、もっと深く。
-                <br />
-                地球の心臓の音を聞きにいく。
-              </h2>
-              <p className="body-text text-[#f3f3f3] opacity-90">
-                見上げれば空があるように、
-                <br />
-                足元には、果てしない
-                <br />
-                奥行きが広がっています。
-                <br />
-                <br />
-                そこは、太陽の届かない場所。
-                <br />
-                <br />
-                けれど、決して暗闇だけの
-                <br />
-                世界ではありません。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Content Sections */}
-      {sections.map((section) => (
-        <section key={section.id} className="section-wrapper">
-          <div className="content-wrapper">
-            <div className="image-container fade-in relative">
-              <Image
-                src={section.image}
-                alt={section.alt}
-                width={1537}
-                height={2732}
-                className="w-full h-auto"
-                sizes="(max-width: 768px) 100vw, 800px"
-              />
-              {/* Text Overlay */}
-              <div
-                className={`text-overlay ${section.isLight ? "text-overlay-light" : ""}`}
-              >
-                <h2
-                  className={`heading ${section.textColor} ${section.textColorMd}`}
-                >
-                  {section.heading}
+            {/* Text Overlay */}
+            <div className="absolute bottom-[5%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+              <div className="w-full text-center">
+                <h2 className="heading text-[#f3f3f3] drop-shadow-lg">
+                  深く、もっと深く。
+                  <br />
+                  地球の心臓の音を聞きにいく。
                 </h2>
-                <p
-                  className={`body-text ${section.textColor} ${section.textColorMd} opacity-90`}
-                >
-                  {section.body.split("\n").map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      {i < section.body.split("\n").length - 1 && <br />}
-                    </span>
-                  ))}
+                <p className="body-text text-[#f3f3f3] drop-shadow-lg font-medium">
+                  見上げれば空があるように、
+                  <br />
+                  足元には、果てしない
+                  <br />
+                  奥行きが広がっています。
+                  <br />
+                  <br />
+                  そこは、太陽の届かない場所。
+                  <br />
+                  <br />
+                  けれど、決して暗闇だけの
+                  <br />
+                  世界ではありません。
                 </p>
               </div>
             </div>
           </div>
         </section>
-      ))}
 
-      {/* Footer */}
-      <footer className="footer">
-        <p className="footer-text">© 2025 newhello.jp</p>
-      </footer>
+        {/* Content Sections */}
+        {sections.map((section) => (
+          <section key={section.id} className="relative w-full">
+            {section.overlay ? (
+              <div className="relative w-full">
+                <Image
+                  src={section.image}
+                  alt={section.alt}
+                  width={section.width}
+                  height={section.height}
+                  className="w-full h-auto block"
+                />
+                
+                <div className="absolute bottom-[8%] left-0 right-0 px-6 z-10 flex justify-center fade-in">
+                  <div className="w-full text-center">
+                    <h2 className={`heading ${section.textColor} drop-shadow-lg`}>
+                      {section.heading}
+                    </h2>
+                    <p className={`body-text ${section.textColor} drop-shadow-lg font-medium`}>
+                      {section.body.split("\n").map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < section.body.split("\n").length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              // Footer Section (画像の下にテキスト)
+              // ここだけ背景色が必要か？それともテクスチャ背景を活かすか？
+              // FigmaデザインではFooter部分はクリーム色。テクスチャ背景の方がリッチなので透明のままにする。
+              <div className="w-full flex flex-col items-center">
+                <div className="relative w-full">
+                  <Image
+                    src={section.image}
+                    alt={section.alt}
+                    width={section.width}
+                    height={section.height}
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <div className="w-full py-16 px-6 flex justify-center fade-in">
+                  <div className="w-full text-center">
+                    <h2 className={`heading ${section.textColor}`}>
+                      {section.heading}
+                    </h2>
+                    <p className={`body-text ${section.textColor}`}>
+                      {section.body.split("\n").map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < section.body.split("\n").length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </section>
+        ))}
+
+        {/* Footer */}
+        <footer className="w-full py-16 text-center">
+          <p className="footer-text">© 2025 newhello.jp</p>
+        </footer>
+      </div>
     </main>
   );
 }
