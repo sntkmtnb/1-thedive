@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 100 Digital Experiments: The Frontier of AI & Creative
+> **「やりたい」を、AIと共に最速で形にする100の実験。**
 
-## Getting Started
+本プロジェクトは、ソフトウェア・スタジオ [NEWHELLO](https://newhello.jp) による、AIとクリエイティビティの限界を拡張する100日間の連続公開実験です。1日1サイト、計100個のプロトタイプ制作を通じて、次世代のデジタル表現のスタンダードを定義します。
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Missions & Value
+私たちは、この100の実験を通じて以下の5つの価値を追求し、社会へ還元します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **AI-Native Aesthetics（AI表現の社会実装）**
+   最新のAI技術を単なる効率化ツールではなく、新しい「表現言語」として定義。これまでにない視覚体験やインタラクションを探求し、実務レベルでの社会実装を目指します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Proof of Concept Archive（実証済みのアイデア群）**
+   構想から実装までを最短距離で結ぶ「動くプロトタイプ」を蓄積。お客様の「やりたい」を即座に具体化・視覚化するための強力な技術アセット（資産）を構築します。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Next-Gen Storytelling（次世代のコンテンツ体験）**
+   情報過多の時代に「届く」表現とは何か。企画・デザイン・実装を一気通貫で行うことで、物語性と機能性を両立させた、人の心を動かすコンテンツ制作の最適解を提示します。
 
-## Learn More
+4. **Agile Quality Standard（スピードと品質の極致）**
+   AIネイティブなワークフローにおける「完成度」の定義を更新します。圧倒的なスピード感の中でも妥協しない、ビジネスとアートが交差する最高純度のクオリティを追求します。
 
-To learn more about Next.js, take a look at the following resources:
+5. **Thought Leadership（知見の共有とコミュニティへの貢献）**
+   制作プロセスと技術的知見をオープンに発信。挑戦するクリエイターや表現者が刺激し合い、共に成長できるエコシステムに寄与し、業界における影響力を獲得します。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Archive
+100の実験は、一つひとつが独立したコンセプトを持つプロトタイプです。
 
-## Deploy on Vercel
+* **No.001: [The Dive](https://1-thedive.vercel.app/)** - 没入型デジタル体験の探求
+* **No.002: [The Museum](https://2-themuseum.vercel.app/)** - デジタルアーカイブにおける美学の再定義
+* *Coming soon to 100...*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👤 About the Creator
+### **NEWHELLO | やりたいを実現するソフトウェア・スタジオ**
+
+NEWHELLOは、チャレンジする人の「やりたい」を動くかたちにするソフトウェア・スタジオです。
+UIデザインから開発、公開後の運用まで一気通貫でサポートし、技術とクリエイティブの力で、新しい「ハロー（出会い）」を創り出します。
+
+* **Official Website:** [https://newhello.jp](https://newhello.jp)
+* **Philosophy:** 挑戦を、止めるな。アイデアに、実体を。
+
+---
+© 2024-2025 NEWHELLO. All rights reserved.
